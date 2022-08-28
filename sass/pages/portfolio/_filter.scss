@@ -1,0 +1,52 @@
+.filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    margin-bottom: 40px;
+
+    @media screen and (min-width: 768px) {
+        justify-content: center;
+    }
+
+    @media screen and (min-width: 1200px) {
+        margin-bottom: 50px;
+    }
+}
+
+.filter__item:not(:last-child) {
+    margin-right: 8px;
+}
+
+.filter__item:not(:nth-last-child(-n+2)) {
+    margin-bottom: 15px;
+
+    @media screen and (min-width:768px) {
+        margin-bottom: 0;
+    }
+}
+
+.filter__button {
+    padding: 6px 22px;
+    background-color: $button-filter-color;
+    border-radius: 4px;
+    border-style: hidden;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: calc(26 / 16);
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: $header-text-color;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus,
+    &.primary {
+        border-color: $hover-color;
+        color: $background-color;
+        background-color: $hover-color;
+        box-shadow: 0px 3px 1px $shadow-filter-color1, 0px 1px 2px $shadow-filter-color2, 0px 2px 2px $shadow-filter-color3;
+    }
+}
